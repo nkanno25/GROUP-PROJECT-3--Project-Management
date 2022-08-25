@@ -23,6 +23,13 @@ code {
 
 .btn {
   font-size: 15px;
+  font-weight: bold;
+  border-radius: 0;
+  border: none;
+  padding: 10px 20px;
+  background: #df3ca6;
+  color: #fff;
+  transition: background 0.2s ease-in-out;
 }
 
 .btn-primary,
@@ -38,6 +45,7 @@ code {
 
 .btn-secondary {
   background-color: #7430f9;
+  border: none;
 }
 
 .btn-secondary:hover {
