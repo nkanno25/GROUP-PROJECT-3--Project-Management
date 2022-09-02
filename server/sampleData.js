@@ -74,6 +74,6 @@ const clients = [
     email: 'bruce@gmail.com',
     phone: '321-468-8887',
   },
-];
+];    
 
 module.exports = { projects, clients };
