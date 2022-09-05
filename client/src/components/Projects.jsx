@@ -11,17 +11,21 @@ export default function Projects() {
     if (error) return <p>Something is wrong</p>; 
 
   return (
-  <>
-  {data.projects.length > 0 ? (
-      <div className=' mt-4'>
-          {data.projects.map((project) => (
-          <ProjectCard key={project.id} project= 
-          {project} />
-          ))}
-      </div>
-  ) : (
-  <p>No Projects</p>
-  )}
-  </>
-  );
+    <div className="table-responsive">
+        <table className="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {data.projects.map(project => (
+                    <ProjectCard key={project.id} project={project} />
+                ))}
+            </tbody>
+        </table>
+    </div>
+    );
 }

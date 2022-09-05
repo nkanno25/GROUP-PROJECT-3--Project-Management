@@ -1,22 +1,28 @@
-export default function ProjectCard({ project }) {
-  return (
-    <div className="col-md-6">
-        <div className="card mb-3">
-            <div className="card-body">
-                <div className="d-flex justify-content-between align-items-center">
-                    <h5 className="card-title">{ project.name}
-                    </h5>
+// ProjectCard inside the Projects jsx
 
-                    <a className="btn btn-light" 
-                    href={`/projects/${project.id}`}>
-                        View
-                    </a>
-                </div>
-                <p className="small">
-                    Status: <strong>{project.status}</strong>
-                </p>
-            </div>
-        </div>
-    </div>
-  )
+import React from "react";
+import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import Spinner from "./Spinner";
+import { GET_PROJECTS } from "../queries/projectQueries";
+
+export default function ProjectCard(props) {
+
+    const { loading, error, data } = useQuery(GET_PROJECTS);
+    if (loading) return <Spinner />;
+    if (error) return <p>Something is wrong</p>;
+    const project = data.projects.find(
+        (project) => project.id === props.project.id
+    );
+    return (
+        <tr>
+        <td>{project.name}</td>
+        <td>{project.status}</td>
+        <td>
+            <Link to={`/projects/${project.id}`} className="btn btn-primary">
+                View
+            </Link>
+        </td>
+        </tr>
+    );
 }
