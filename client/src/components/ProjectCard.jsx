@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import Spinner from "./Spinner";
 import { GET_PROJECTS } from "../queries/projectQueries";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 export default function ProjectCard(props) {
 

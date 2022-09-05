@@ -2,6 +2,8 @@ import Clients from '../components/Clients';
 import Projects from '../components/Projects';
 import AddClientModal from '../components/AddClientModal';
 import AddProjectModal from '../components/AddProjectModal';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../components/style.css';
 
 export default function Home() {
   return (
