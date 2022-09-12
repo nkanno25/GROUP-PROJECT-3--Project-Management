@@ -1,16 +1,15 @@
-import logo from './assets/logo.png';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 export default function Header() {
   return (
-    <nav className='navbar bg-light mb-4 p-0'>
-      <div className='container'>
-        <a className='navbar-brand' href='/'>
-          <div className='d-flex'>
-            <img src={logo} alt='logo' className='mr-2' />
-            <div>ProjectMgmt</div>
-          </div>
-        </a>
-      </div>
-    </nav>
+<AppBar position="static"
+sx={{
+  background: "linear-gradient(0deg, rgba(235,251,97,1) 0%, rgba(4,152,255,1) 100%)"
+}}>
+  <Toolbar>
+    <Typography variant="h6">Project Management App</Typography>
+  </Toolbar>
+</AppBar>
+
   );
 }
